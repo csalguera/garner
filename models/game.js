@@ -6,7 +6,8 @@ const gameSchem = new Schema({
   name: String,
   image: String,
   purchase: String,
-  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
+  platform: String,
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
   // will add comment Model
   // comments: [commentSchema]
 }, {

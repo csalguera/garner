@@ -5,7 +5,7 @@ function index(req, res) {
   .then(games => {
     res.render('games/index', {
       games,
-      title: 'Games'
+      title: 'All Games'
     })
   })
   .catch(err => {
@@ -24,7 +24,19 @@ function newGame(req, res) {
   })
 }
 
+function create(req, res) {
+  Game.create(req.body)
+  .then(game => {
+    res.redirect('/games')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
-  newGame as new
+  newGame as new,
+  create
 }
