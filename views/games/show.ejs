@@ -21,8 +21,8 @@
     <p>Added by <%= game.owner.name %></p>
   <% } %>
   <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
+  <h1>Comments</h1>
   <div class="comments-container">
-    <h1>Comments</h1>
     <% if (user) { %>
       <div class="comment-form">
         <img src="<%= user.profile.avatar %>">
@@ -34,8 +34,16 @@
     <% } %>
     <% if (game.comments.length) { %>
       <% game.comments.forEach(comment => { %>
-        <%= comment.content %>
+        <div class="comment">
+          <img src="<%= comment.commenter.avatar %>">
+          <a href="/games/<%= game._id %>"><%= comment.commenter.name %></a>
+          <p><%= comment.content %></p>
+        </div>
       <% }) %>
+    <% } else { %>
+      <div class="no-comments">
+        <h3>No comments yet</h3>
+      </div>
     <% } %>
   </div>
 </main>

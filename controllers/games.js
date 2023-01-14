@@ -39,6 +39,7 @@ function create(req, res) {
 function show(req, res) {
   Game.findById(req.params.id)
   .populate('owner')
+  .populate('comments.commenter')
   .then(game => {
     res.render('games/show', {
       game,
@@ -102,9 +103,9 @@ function deleteGame(req, res) {
 }
 
 function createComment(req, res) {
+  req.body.commenter = req.user.profile._id
   Game.findById(req.params.id)
   .then(game => {
-    console.log(req.body);
     game.comments.push(req.body)
     game.save()
     .then(() => {
