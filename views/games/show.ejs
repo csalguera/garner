@@ -1,0 +1,11 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/games/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <img src="<%= game.image %>">
+  <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
+</main>
+    
+<%- include('../partials/footer') %>

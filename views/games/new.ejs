@@ -4,25 +4,29 @@
 
 <main>
   <h1><%= title %></h1>
-  <form
-  action="/games"
-  method="POST"
-  autocomplete="off"
-  >
-    <label>
-      Name:
-      <input type="text" name="name" placeholder="Enter Name">
-    </label>
-    <label>
-      Image:
-      <input type="text" name="image" placeholder="Enter Image Url">
-    </label>
-    <label>
-      Purchase:
-      <input type="text" name="purchase" placeholder="Enter Store Page Url">
-    </label>
-    <button type="submit">Add Game</button>
-  </form>
+  <% if (user) { %>
+    <form
+    action="/games"
+    method="POST"
+    autocomplete="off"
+    >
+      <label>
+        Name:
+        <input type="text" name="name" placeholder="Enter Name">
+      </label>
+      <label>
+        Image:
+        <input type="text" name="image" placeholder="Enter Image Url">
+      </label>
+      <label>
+        Purchase:
+        <input type="text" name="purchase" placeholder="Enter Store Page Url">
+      </label>
+      <button type="submit">Add Game</button>
+    </form>
+  <% } else { %>
+    <h2>Please log in to access this page</h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

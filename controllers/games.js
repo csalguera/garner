@@ -35,8 +35,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    res.render('games/show', {
+      game,
+      title: `${game.name}`
+    })
+  })
+    .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
-  create
+  create,
+  show
 }

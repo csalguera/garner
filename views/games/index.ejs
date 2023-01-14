@@ -7,8 +7,10 @@
   <section>
     <% games.forEach(game => { %>
       <div class="game-container">
-        <img src="<%= game.image %>" width="500px">
-        <p><%= game.name %></p>
+        <a href="/games/<%= game._id %>">
+          <img src="<%= game.image %>">
+          <p><%= game.name %></p>
+        </a>
       </div>
     <% }) %>
   </section>
