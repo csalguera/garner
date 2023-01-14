@@ -6,7 +6,7 @@
   <h1><%= title %></h1>
   <% if (user) { %>
     <form
-    action="/games"
+    action="/games/<%= game._id %>?_method=PUT"
     method="POST"
     autocomplete="off"
     >

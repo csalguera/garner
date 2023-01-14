@@ -65,10 +65,29 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    if (game.owner.equals(req.user.profile._id)) {
+      game.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/games/${game._id}`)
+      })
+    } else {
+      throw new Error('You are not authorized to edit this game')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
   create,
   show,
-  edit
+  edit,
+  update
 }
