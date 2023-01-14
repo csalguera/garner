@@ -9,6 +9,7 @@ router.get('/new', gamesCtrl.new)
 router.get('/:id', gamesCtrl.show)
 router.get('/:id/edit', isLoggedIn, gamesCtrl.edit)
 router.post('/', isLoggedIn, gamesCtrl.create)
+router.post('/:id/comments', isLoggedIn, gamesCtrl.createComment)
 router.put('/:id', isLoggedIn, gamesCtrl.update)
 router.delete('/:id', isLoggedIn, gamesCtrl.delete)
 

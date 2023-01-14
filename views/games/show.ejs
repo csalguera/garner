@@ -21,6 +21,23 @@
     <p>Added by <%= game.owner.name %></p>
   <% } %>
   <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
+  <div class="comments-container">
+    <h1>Comments</h1>
+    <% if (user) { %>
+      <div class="comment-form">
+        <img src="<%= user.profile.avatar %>">
+        <form action="/games/<%= game._id %>/comments" method="POST" autocomplete="off">
+          <input type="text" placeholder="Add a comment" name="content">
+          <button type="submit">Comment</button>
+        </form>
+      </div>
+    <% } %>
+    <% if (game.comments.length) { %>
+      <% game.comments.forEach(comment => { %>
+        <%= comment.content %>
+      <% }) %>
+    <% } %>
+  </div>
 </main>
     
 <%- include('../partials/footer') %>

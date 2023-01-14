@@ -101,6 +101,26 @@ function deleteGame(req, res) {
   })
 }
 
+function createComment(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    console.log(req.body);
+    game.comments.push(req.body)
+    game.save()
+    .then(() => {
+      res.redirect(`/games/${game._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
@@ -108,5 +128,6 @@ export {
   show,
   edit,
   update,
-  deleteGame as delete
+  deleteGame as delete,
+  createComment
 }
