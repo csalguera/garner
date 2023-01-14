@@ -83,11 +83,30 @@ function update(req, res) {
   })
 }
 
+function deleteGame(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    if (game.owner.equals(req.user.profile._id)) {
+      game.delete()
+      .then(() => {
+        res.redirect('/games')
+      })
+    } else {
+      throw new Error('You are not authorized to delete this game')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
   create,
   show,
   edit,
-  update
+  update,
+  deleteGame as delete
 }

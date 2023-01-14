@@ -10,9 +10,7 @@
       <form action="/games/<%= game._id %>/edit">
         <button type="submit">Edit this Game</button>
       </form>
-      <form action="/games/:id?_method=DELETE"
-      method="POST"
-      >
+      <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
         <button>Delete this Game</button>
       </form>
     </div>
