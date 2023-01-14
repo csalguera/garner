@@ -5,6 +5,23 @@
 <main>
   <h1><%= title %></h1>
   <img src="<%= game.image %>">
+  <% if (game.owner.equals(user?.profile._id)) { %>
+    <div class="btn-container">
+      <form action="/games/<%= game._id %>/edit">
+        <button type="submit">Edit this Game</button>
+      </form>
+      <form action="/games/:id?_method=DELETE"
+      method="POST"
+      >
+        <button>Delete this Game</button>
+      </form>
+    </div>
+  <% } %>
+  <% if (game.owner.equals(user?.profile._id)) { %>
+    <p>Added by you</p>
+  <% } else { %>
+    <p>Added by <%= game.owner.name %></p>
+  <% } %>
   <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
 </main>
     

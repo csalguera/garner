@@ -25,6 +25,7 @@ function newGame(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Game.create(req.body)
   .then(game => {
     res.redirect('/games')
@@ -37,6 +38,7 @@ function create(req, res) {
 
 function show(req, res) {
   Game.findById(req.params.id)
+  .populate('owner')
   .then(game => {
     res.render('games/show', {
       game,
@@ -49,9 +51,24 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    res.render(`games/edit`, {
+      game,
+      title: 'Edit Game'
+    })
+  })
+    .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
   create,
-  show
+  show,
+  edit
 }

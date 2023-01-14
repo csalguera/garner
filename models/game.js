@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
-const gameSchem = new Schema({
+const gameSchema = new Schema({
   name: String,
   image: String,
   purchase: String,
@@ -14,7 +14,7 @@ const gameSchem = new Schema({
   timestamps: true
 })
 
-const Game = mongoose.model('Game', gameSchem)
+const Game = mongoose.model('Game', gameSchema)
 
 export {
   Game

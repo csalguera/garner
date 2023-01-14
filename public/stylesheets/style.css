@@ -33,6 +33,10 @@ nav > a {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   display: flex;
   align-items: center;
