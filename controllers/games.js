@@ -122,6 +122,24 @@ function createComment(req, res) {
   })
 }
 
+function editComment(req, res) { // Will add functionality
+  Game.findById(req.params.id)
+  .then(game => {
+    console.log('test');
+  })
+}
+
+function deleteComment(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    game.comments.id(req.params.comId).remove()
+    game.save()
+    .then(() => {
+      res.redirect(`/games/${game._id}`)
+    })
+  })
+}
+
 export {
   index,
   newGame as new,
@@ -130,5 +148,7 @@ export {
   edit,
   update,
   deleteGame as delete,
-  createComment
+  createComment,
+  editComment,
+  deleteComment
 }

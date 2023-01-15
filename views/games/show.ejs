@@ -44,12 +44,14 @@
               <p><%= comment.content %></p>
             </div>
           </div>
-          <% if (game.owner.equals(user?.profile._id)) { %>
+          <% if (comment.commenter.equals(user?.profile._id)) { %>
           <div class="comment-btns-container">
             <form action="/games/<%= game._id %>/comments/<%= comment._id %>/edit">
               <button type="submit">Edit</button>
             </form>
-            <button type="submit">Remove</button>
+            <form action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button type="submit">Remove</button>
+            </form>
           </div>
           <% } %>
         </div>
