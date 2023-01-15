@@ -6,7 +6,7 @@
   <h1><%= title %></h1>
   <img src="<%= game.image %>">
   <% if (game.owner.equals(user?.profile._id)) { %>
-    <div class="btn-container">
+    <div class="game-btns-container">
       <form action="/games/<%= game._id %>/edit">
         <button type="submit">Edit this Game</button>
       </form>
@@ -22,7 +22,7 @@
   <% } %>
   <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
   <h1>Comments</h1>
-  <div class="comments-container">
+  <div class="all-comments-container">
     <% if (user) { %>
       <div class="comment-form">
         <img src="<%= user.profile.avatar %>">
@@ -31,21 +31,33 @@
           <button type="submit">Comment</button>
         </form>
       </div>
+    <% } else { %>
+      <h3>Sign in to leave a comment.</h3>
     <% } %>
     <% if (game.comments.length) { %>
       <% game.comments.forEach(comment => { %>
-        <div class="comment">
-          <img src="<%= comment.commenter.avatar %>">
-          <a href="/games/<%= game._id %>"><%= comment.commenter.name %></a>
-          <p><%= comment.content %></p>
+        <div class="comment-container">
+          <div class="comment">
+            <img src="<%= comment.commenter.avatar %>">
+            <div class="commenter-and-content">
+              <a href="/games/<%= game._id %>"><%= comment.commenter.name %></a>
+              <p><%= comment.content %></p>
+            </div>
+          </div>
+          <% if (game.owner.equals(user?.profile._id)) { %>
+          <div class="comment-btns-container">
+            <form action="/games/<%= game._id %>/comments/<%= comment._id %>/edit">
+              <button type="submit">Edit</button>
+            </form>
+            <button type="submit">Remove</button>
+          </div>
+          <% } %>
         </div>
       <% }) %>
-    <% } else { %>
-      <div class="no-comments">
-        <h3>No comments yet</h3>
-      </div>
-    <% } %>
-  </div>
+      <% } else { %>
+        <h2>No comments yet</h2>
+      <% } %>
+    </div>
 </main>
     
 <%- include('../partials/footer') %>

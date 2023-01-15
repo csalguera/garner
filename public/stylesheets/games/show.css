@@ -2,28 +2,45 @@ main > a {
   color: white;
   font-size: 24px;
   margin-top: 16px;
+  padding: 5px;
 }
 
-.btn-container {
+main > a:hover {
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-radius: 100px;
+}
+
+.game-btns-container {
   display: flex;
   margin-top: 16px;
 }
 
-.btn-container > * {
+.game-btns-container > * {
   margin-left: 8px;
   margin-right: 8px;
 }
 
-.comments-container {
+.all-comments-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: 500px;
+  width: 500px;
+}
+
+h2, h3 {
+  align-self: center;
 }
 
 .comment-form,
 .comment {
   display: flex;
+}
+
+.comment-form {
   align-items: center;
 }
 
@@ -34,7 +51,8 @@ main > a {
 .comment-form img,
 .comment img {
   border-radius: 100px;
-  width: 50px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .comment-form input {
@@ -46,7 +64,8 @@ main > a {
 }
 
 .comment {
-  margin: 12px 0;
+  margin: 12px 0 0;
+  height: fit-content;
 }
 
 .comment > * {
@@ -55,19 +74,29 @@ main > a {
 
 .comment a {
   width: max-content;
+  align-self: flex-start;
   color: white;
   white-space: nowrap;
 }
 
 .comment p {
-  max-width: 300px;
+  max-width: 415px;
+  align-self: flex-end;
   word-wrap:break-word;
+  height: fit-content;
+  margin-bottom: 12px;
 }
 
-.no-comments {
+.comment-container {
   width: inherit;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin: 12px 0;
+}
+
+.comment-btns-container {
+  align-self: end;
+  margin: 0 8px;
+  width: 415px;
+  display: flex;
 }
