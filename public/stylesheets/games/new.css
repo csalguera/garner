@@ -1,10 +1,36 @@
-form {
+.edit-game-form {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: start;
 }
 
-form > label {
+.edit-game-form > label {
   margin-bottom: 16px;
+}
+
+.comment-form {
+  display: flex;
+}
+
+.comment-form {
+  align-items: center;
+}
+
+.comment-form > * {
+  margin: 0 8px;
+}
+
+.comment-form img {
+  border-radius: 100px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.comment-form input {
+  width: 340px;
+}
+
+.comment-form button {
+  float: right;
 }

@@ -20,6 +20,8 @@ router.post('/', isLoggedIn, gamesCtrl.create)
 router.post('/:id/comments', isLoggedIn, gamesCtrl.createComment)
 // PUT /games/:id
 router.put('/:id', isLoggedIn, gamesCtrl.update)
+// PUT /games/:id/comments/:id
+router.put('/:id/comments/:comId', isLoggedIn, gamesCtrl.updateComment)
 // DELETE /games/:id
 router.delete('/:id', isLoggedIn, gamesCtrl.delete)
 // DELETE /games/:id/comments/:id

@@ -122,21 +122,59 @@ function createComment(req, res) {
   })
 }
 
-function editComment(req, res) { // Will add functionality
+function editComment(req, res) {
   Game.findById(req.params.id)
   .then(game => {
-    console.log('test');
+    console.log(game);
+    let comment = game.comments.id(req.params.comId)
+    res.render('games/edit', {
+      game,
+      comment,
+      title: 'Edit Comment'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function updateComment(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    let comment = game.comments.id(req.params.comId)
+    if (comment.commenter.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      game.save()
+      .then(() => {
+        res.redirect(`/games/${game._id}`)
+      })
+    } else {
+      throw new Error('You are not authorized to edit this comment')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
 function deleteComment(req, res) {
   Game.findById(req.params.id)
   .then(game => {
-    game.comments.id(req.params.comId).remove()
-    game.save()
-    .then(() => {
-      res.redirect(`/games/${game._id}`)
-    })
+    if (game.comments.id(req.params.comId).commenter.equals(req.user.profile._id)) {
+      game.comments.id(req.params.comId).remove()
+      game.save()
+      .then(() => {
+        res.redirect(`/games/${game._id}`)
+      })
+    } else {
+      throw new Error('You are not authorized to delete this comment')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -150,5 +188,6 @@ export {
   deleteGame as delete,
   createComment,
   editComment,
+  updateComment,
   deleteComment
 }

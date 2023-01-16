@@ -5,7 +5,9 @@
 <main>
   <h1><%= title %></h1>
   <% if (user) { %>
+    <% if (title === 'Edit Game') { %>
     <form
+    class="edit-game-form"
     action="/games/<%= game._id %>?_method=PUT"
     method="POST"
     autocomplete="off"
@@ -24,6 +26,15 @@
       </label>
       <button type="submit">Update Game</button>
     </form>
+    <% } else { %>
+      <div class="comment-form">
+        <img src="<%= user.profile.avatar %>">
+        <form action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=PUT" method="POST" autocomplete="off">
+          <input value="<%= comment.content %>" type="text" placeholder="Edit comment" name="content">
+          <button type="submit">Edit</button>
+        </form>
+      </div>
+    <% } %>
   <% } else { %>
     <h2>Please log in to access this page</h2>
   <% } %>
