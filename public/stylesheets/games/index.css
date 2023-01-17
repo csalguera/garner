@@ -16,14 +16,13 @@ section {
   filter: brightness(50%);
 }
 
-img {
+section img {
   width: 500px;
   height: 250px;
   object-fit: cover;
 }
 
 p {
-  font-size: 24px;
   text-align: center;
 }
 

@@ -16,7 +16,7 @@ section {
   filter: brightness(50%);
 }
 
-img {
+section img {
   width: 200px;
   height: 100px;
   object-fit: contain;
@@ -24,7 +24,6 @@ img {
 }
 
 p {
-  font-size: 16px;
   text-align: center;
 }
 

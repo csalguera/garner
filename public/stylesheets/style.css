@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ html {
   /* All ::after pseudo-elements */
   /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
+  font-family: 'VT323', monospace;
 }
 
 body {
@@ -22,6 +25,7 @@ body {
 
 nav {
   background-color: #f6f6f6;
+  background-color: gray;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -31,6 +35,23 @@ nav {
 
 nav > a {
   color: black;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.a-tag,
+.a-tag:hover {
+  padding: 8px;
+}
+
+.a-tag:hover {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+nav > * {
+  margin: 0 auto;
 }
 
 a {
@@ -44,6 +65,60 @@ main {
   flex-direction: column;
 }
 
+#logout {
+  width: 238.906px;
+  height: 38px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .right {
   margin-left: auto;
+}
+
+.logo {
+  padding-top: 8px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+main button {
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 8px;
+}
+
+main a {
+  font-size: 20px;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 24px;
+  padding: 8px;
+  color: white;
+  outline: none;
+}
+
+p,
+label {
+  font-size: 24px;
+}
+
+.active {
+  color: white;
 }
