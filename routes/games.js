@@ -14,14 +14,17 @@ router.get('/:id', gamesCtrl.show)
 router.get('/:id/edit', isLoggedIn, gamesCtrl.edit)
 // GET /games/:id/comments/:id/edit
 router.get('/:id/comments/:comId/edit', isLoggedIn, gamesCtrl.editComment)
+
 // POST /games
 router.post('/', isLoggedIn, gamesCtrl.create)
 // POST /games/:id/comments
 router.post('/:id/comments', isLoggedIn, gamesCtrl.createComment)
+
 // PUT /games/:id
 router.put('/:id', isLoggedIn, gamesCtrl.update)
 // PUT /games/:id/comments/:id
 router.put('/:id/comments/:comId', isLoggedIn, gamesCtrl.updateComment)
+
 // DELETE /games/:id
 router.delete('/:id', isLoggedIn, gamesCtrl.delete)
 // DELETE /games/:id/comments/:id

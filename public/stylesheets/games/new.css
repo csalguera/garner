@@ -1,3 +1,4 @@
+.new-game-form,
 .edit-game-form {
   display: flex;
   flex-direction: column;
@@ -5,6 +6,7 @@
   text-align: start;
 }
 
+.new-game-form,
 .edit-game-form > label {
   margin-bottom: 16px;
 }
