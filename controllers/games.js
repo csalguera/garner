@@ -5,9 +5,13 @@ function index(req, res) {
   Game.find({})
   .populate('platforms')
   .then(games => {
-    res.render('games/index', {
-      games,
-      title: 'All Games'
+    Platform.find({ _id: {$in: games.platforms} })
+    .then(platforms => {
+      res.render('games/index', {
+        games,
+        platforms,
+        title: 'All Games'
+      })
     })
   })
   .catch(err => {

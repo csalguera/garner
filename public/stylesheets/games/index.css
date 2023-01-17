@@ -5,6 +5,7 @@ section {
 }
 
 .game-container {
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,20 +13,41 @@ section {
   cursor: pointer;
 }
 
-.game-container:hover {
-  filter: brightness(50%);
-}
-
-section img {
+.game-container img {
   width: 500px;
-  height: 250px;
   object-fit: cover;
 }
 
-p {
-  text-align: center;
+.game-container > a > img:hover {
+  filter: brightness(50%);
 }
 
 a {
   color: white;
+  text-align: center;
+}
+
+.index-platforms-container {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.index-platforms-container .platform-name {
+  margin-right: auto;
+}
+
+.index-platforms-container img {
+  width: 50px;
+  object-fit: contain;
+  mix-blend-mode: difference;
+  margin-left: auto;
+}
+
+.index-platforms-container img:hover {
+  background-color: gray;
+  border-radius: 8px;
 }

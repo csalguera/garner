@@ -9,8 +9,13 @@
       <div class="game-container">
         <a href="/games/<%= game._id %>">
           <img src="<%= game.image %>">
-          <p><%= game.name %></p>
         </a>
+          <div class="index-platforms-container">
+            <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>
+            <% game.platforms.forEach(platform => { %>
+              <a class="platform-icon" href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
+            <% }) %>
+          </div>
       </div>
     <% }) %>
   </section>
