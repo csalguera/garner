@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/platforms/new.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <% if (platform.owner.equals(user?.profile._id)) { %>
+  <form
+  class="edit-platform-form"
+  action="/platforms/<%= platform._id %>?_method=PUT"
+  method="POST"
+  autocomplete="off"
+  >
+    <label>
+      Name:
+      <input value="<%= platform.name %>" type="text" name="name" placeholder="Enter Name">
+    </label>
+    <label>
+      Image:
+      <input value="<%= platform.image %>" type="text" name="image" placeholder="Enter Image Url">
+    </label>
+    <button type="submit">Update platform</button>
+  </form>
+    </div>
+  <% } else { %>
+    <h2>Please log in to access this page</h2>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>

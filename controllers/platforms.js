@@ -51,9 +51,62 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Platform.findById(req.params.id)
+  .then(platform => {
+    res.render(`platforms/edit`, {
+      platform,
+      title: 'Edit Platform'
+    })
+  })
+    .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function update(req, res) {
+  Platform.findById(req.params.id)
+  .then(platform => {
+    if (platform.owner.equals(req.user.profile._id)) {
+      platform.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/platforms/${platform._id}`)
+      })
+    } else {
+      throw new Error('You are not authorized to edit this platform')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function deletePlatform(req, res) {
+  Platform.findById(req.params.id)
+  .then(platform => {
+    if (platform.owner.equals(req.user.profile._id)) {
+      platform.delete()
+      .then(() => {
+        res.redirect('/platforms')
+      })
+    } else {
+      throw new Error('You are not authorized to delete this platform')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newPlatform as new,
   create,
-  show
+  show,
+  edit,
+  update,
+  deletePlatform as delete
 }
