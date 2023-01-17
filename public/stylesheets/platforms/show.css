@@ -1,0 +1,16 @@
+.platform-btns-container {
+  display: flex;
+  margin-top: 16px;
+}
+
+.platform-btns-container > * {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+img {
+  width: 500px;
+  height: 250px;
+  object-fit: contain;
+  mix-blend-mode: difference;
+}

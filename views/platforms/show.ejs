@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/platforms/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <img src="<%= platform.image %>">
+  <% if (platform.owner.equals(user?.profile._id)) { %>
+    <div class="platform-btns-container">
+      <form action="/platforms/<%= platform._id %>/edit">
+        <button type="submit">Edit this platform</button>
+      </form>
+      <form action="/platforms/<%= platform._id %>?_method=DELETE" method="POST">
+        <button>Delete this platform</button>
+      </form>
+    </div>
+  <% } %>
+  <% if (platform.owner.equals(user?.profile._id)) { %>
+    <p>Added by you</p>
+  <% } else { %>
+    <p>Added by <%= platform.owner.name %></p>
+  <% } %>
+</main>
+    
+<%- include('../partials/footer') %>

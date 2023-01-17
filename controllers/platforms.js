@@ -25,6 +25,7 @@ function newPlatform(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Platform.create(req.body)
   .then(platform => {
     res.redirect('/platforms')
@@ -35,8 +36,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Platform.findById(req.params.id)
+  .populate('owner')
+  .then(platform => {
+    res.render('platforms/show', {
+      platform,
+      title: `${platform.name}`
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newPlatform as new,
-  create
+  create,
+  show
 }
