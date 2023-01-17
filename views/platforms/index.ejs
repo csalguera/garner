@@ -1,9 +1,19 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/games/index.css">
+<link rel="stylesheet" href="/stylesheets/platforms/index.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
+  <section>
+    <% platforms.forEach(platform => { %>
+      <div class="platform-container">
+        <a href="/platforms/<%= platform._id %>">
+          <img src="<%= platform.image %>">
+          <p><%= platform.name %></p>
+        </a>
+      </div>
+    <% }) %>
+  </section>
 </main>
     
 <%- include('../partials/footer') %>

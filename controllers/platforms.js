@@ -14,11 +14,29 @@ function index(req, res) {
   })
 }
 
+function newPlatform(req, res) {
+  res.render('platforms/new', {
+    title: 'Add Platform'
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/')
+  })
+}
+
 function create(req, res) {
-  console.log('test');
+  Platform.create(req.body)
+  .then(platform => {
+    res.redirect('/platforms')
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/')
+  })
 }
 
 export {
   index,
+  newPlatform as new,
   create
 }

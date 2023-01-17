@@ -1,0 +1,12 @@
+.new-platform-form,
+.edit-platform-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: start;
+}
+
+.new-platform-form,
+.edit-platform-form > label {
+  margin-bottom: 16px;
+}

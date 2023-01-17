@@ -1,0 +1,33 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.platform-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.platform-container:hover {
+  filter: brightness(50%);
+}
+
+img {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  mix-blend-mode: difference;
+}
+
+p {
+  font-size: 16px;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
