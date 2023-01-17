@@ -20,7 +20,27 @@
   <% } else { %>
     <p>Added by <%= game.owner.name %></p>
   <% } %>
-  <a href="<%= game.purchase %>" target="_blank">Available for purchase here</a>
+  <h1>Available On</h1>
+  <div class="platforms-container">
+    <% game.platforms.forEach(platform => { %>
+      <div>
+        <img src="<%= platform.image %>">
+        <p><%= platform.name %></p>
+      </div>
+    <% }) %>
+  </div>
+
+  <% if (game.owner.equals(user?.profile._id)) { %>
+    <form action="/games/<%= game._id %>/platforms" method="POST">
+      <select name="platformId">
+        <% gamePlatforms.forEach(platform => { %>
+          <option value="<%= platform._id %>"><%= platform.name %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Add to Platforms</button>
+    </form>
+  <% } %>
+
   <h1>Comments</h1>
   <div class="all-comments-container">
     <% if (user) { %>

@@ -79,6 +79,10 @@ h2, h3 {
   white-space: nowrap;
 }
 
+.comment a:hover {
+  text-decoration: underline;
+}
+
 .comment p {
   max-width: 415px;
   align-self: flex-end;
@@ -99,4 +103,22 @@ h2, h3 {
   margin: 0 8px;
   width: 415px;
   display: flex;
+}
+
+.platforms-container {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.platforms-container img {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  mix-blend-mode: difference;
+}
+
+.platforms-container div {
+  margin: 0 8px;
 }

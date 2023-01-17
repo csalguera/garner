@@ -19,6 +19,8 @@ router.get('/:id/comments/:comId/edit', isLoggedIn, gamesCtrl.editComment)
 router.post('/', isLoggedIn, gamesCtrl.create)
 // POST /games/:id/comments
 router.post('/:id/comments', isLoggedIn, gamesCtrl.createComment)
+// POST /games/:id/platforms
+router.post('/:id/platforms', isLoggedIn, gamesCtrl.addPlatform)
 
 // PUT /games/:id
 router.put('/:id', isLoggedIn, gamesCtrl.update)

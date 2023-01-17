@@ -1,4 +1,5 @@
 import { Game } from "../models/game.js"
+import { Platform } from "../models/platform.js"
 
 function index(req, res) {
   Game.find({})
@@ -40,10 +41,15 @@ function show(req, res) {
   Game.findById(req.params.id)
   .populate('owner')
   .populate('comments.commenter')
+  .populate('platforms')
   .then(game => {
-    res.render('games/show', {
-      game,
-      title: `${game.name}`
+    Platform.find({ _id: {$nin: game.platforms} })
+    .then(gamePlatforms => {
+      res.render('games/show', {
+        game,
+        gamePlatforms,
+        title: `${game.name}`
+      })
     })
   })
     .catch(err => {
@@ -178,6 +184,25 @@ function deleteComment(req, res) {
   })
 }
 
+function addPlatform(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    game.platforms.push(req.body.platformId)
+    game.save()
+    .then(() => {
+      res.redirect(`/games/${game._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
@@ -189,5 +214,6 @@ export {
   createComment,
   editComment,
   updateComment,
-  deleteComment
+  deleteComment,
+  addPlatform
 }

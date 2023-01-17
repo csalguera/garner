@@ -13,7 +13,7 @@ const gameSchema = new Schema({
   name: String,
   image: String,
   purchase: String,
-  platform: String,
+  platforms: [{ type: Schema.Types.ObjectId, ref: 'Platform' }],
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
   comments: [commentSchema]
 }, {
