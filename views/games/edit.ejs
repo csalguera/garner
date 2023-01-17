@@ -19,10 +19,6 @@
       Image:
       <input value="<%= game.image %>" type="text" name="image" placeholder="Enter Image Url">
     </label>
-    <label>
-      Purchase:
-      <input value="<%= game.purchase %>" type="text" name="purchase" placeholder="Enter Store Page Url">
-    </label>
     <button type="submit">Update Game</button>
   </form>
   <% } else if (title === 'Edit Comment' && comment.commenter.equals(user?.profile._id)) { %>

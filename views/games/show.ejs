@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <img src="<%= game.image %>">
+  <img src="<%= game.image %>" width="700px">
   <% if (game.owner.equals(user?.profile._id)) { %>
     <div class="game-btns-container">
       <form action="/games/<%= game._id %>/edit">
@@ -24,8 +24,8 @@
   <div class="platforms-container">
     <% game.platforms.forEach(platform => { %>
       <div>
-        <img src="<%= platform.image %>">
-        <p><%= platform.name %></p>
+        <a href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
+        <a href="<%= platform.store %>" target="_blank"><%= platform.name %></a>
       </div>
     <% }) %>
   </div>

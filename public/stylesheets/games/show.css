@@ -108,6 +108,7 @@ h2, h3 {
 .platforms-container {
   margin-bottom: 16px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
 }
@@ -119,6 +120,21 @@ h2, h3 {
   mix-blend-mode: difference;
 }
 
+.platforms-container img:hover {
+  background-color: gray;
+  border-radius: 10px;
+}
+
 .platforms-container div {
   margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.platforms-container a {
+  color: white;
+}
+
+.platforms-container a:hover {
+  text-decoration: underline;
 }

@@ -3,6 +3,7 @@ import { Platform } from "../models/platform.js"
 
 function index(req, res) {
   Game.find({})
+  .populate('platforms')
   .then(games => {
     res.render('games/index', {
       games,

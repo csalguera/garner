@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const platformSchema = new Schema({
   name: { type: String, required: true },
   image: String,
+  store: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true
