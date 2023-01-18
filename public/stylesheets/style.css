@@ -32,7 +32,27 @@ nav {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-nav > a {
+.logo {
+  padding: 8px;
+  width: 200px;
+}
+
+.logo:hover {
+  filter: invert();
+  padding: 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.active-logo {
+  filter: invert();
+}
+
+.active-logo:hover {
+  filter: none;
+}
+
+.a-tag {
   color: black;
   font-size: 32px;
   font-weight: bold;
@@ -73,10 +93,6 @@ main {
 
 .right {
   margin-left: auto;
-}
-
-.logo {
-  padding-top: 8px;
 }
 
 button {

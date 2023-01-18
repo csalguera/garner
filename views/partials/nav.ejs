@@ -4,7 +4,7 @@
 </head>
 <body>
   <nav>
-    <a href="/"><img src="/assets/garner-logo.png" alt="garner" class="logo"></a>
+    <a href="/" <%- title === 'garner' ? 'class="active-logo"' : '' %>><img src="/assets/garner-logo.png" alt="garner" class="logo"></a>
     <a href="/games" class="a-tag <%- title === 'All Games' ? 'active' : '' %>">All Games</a>
     <a href="/games/new" class="a-tag <%- title === 'Add Game' ? 'active' : '' %>">Add Game</a>
     <a href="/platforms" class="a-tag <%- title === 'All Platforms' ? 'active' : '' %>">All Platforms</a>
