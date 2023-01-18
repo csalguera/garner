@@ -1,6 +1,6 @@
-# fly.toml file generated for garner on 2023-01-18T13:14:00-05:00
+# fly.toml file generated for garner-game-collector on 2023-01-18T13:45:30-05:00
 
-app = "garner"
+app = "garner-game-collector"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
