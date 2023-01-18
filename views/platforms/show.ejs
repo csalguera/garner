@@ -15,6 +15,9 @@
       </form>
     </div>
   <% } %>
+  <% if (platform.store.length) { %>
+    <a class="store-link" href="<%= platform.store %>" target="_blank">Visit the Store Page</a>
+  <% } %>
   <% if (platform.owner.equals(user?.profile._id)) { %>
     <p>Added by you</p>
   <% } else { %>

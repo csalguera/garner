@@ -14,3 +14,13 @@ main img {
   object-fit: contain;
   mix-blend-mode: difference;
 }
+
+.store-link {
+  font-size: 32px;
+  margin-top: 16px;
+  color: white;
+}
+
+.store-link:hover {
+  text-decoration: underline;
+}
