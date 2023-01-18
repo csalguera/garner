@@ -208,6 +208,25 @@ function addPlatform(req, res) {
   })
 }
 
+function removePlatform(req, res) {
+  Game.findById(req.params.id)
+  .then(game => {
+    if (game.owner.equals(req.user.profile._id)) {
+      game.platforms.pull(req.params.pId)
+      game.save()
+      .then(() => {
+        res.redirect(`/games/${game._id}`)
+      })
+    } else {
+      throw new Error('You are not authorized to remove this platform')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newGame as new,
@@ -220,5 +239,6 @@ export {
   editComment,
   updateComment,
   deleteComment,
-  addPlatform
+  addPlatform,
+  removePlatform
 }

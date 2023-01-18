@@ -31,6 +31,8 @@ router.put('/:id/comments/:comId', isLoggedIn, gamesCtrl.updateComment)
 router.delete('/:id', isLoggedIn, gamesCtrl.delete)
 // DELETE /games/:id/comments/:id
 router.delete('/:id/comments/:comId', isLoggedIn, gamesCtrl.deleteComment)
+// DELETE /games/:id/platforms/:id
+router.delete('/:id/platforms/:pId', isLoggedIn,gamesCtrl.removePlatform)
 
 export {
   router

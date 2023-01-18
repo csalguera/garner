@@ -21,13 +21,22 @@
     <p>Added by <%= game.owner.name %></p>
   <% } %>
   <h1>Available On</h1>
-  <div class="platforms-container">
-    <% game.platforms.forEach(platform => { %>
-      <div>
-        <a href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
-        <a href="<%= platform.store %>" target="_blank"><%= platform.name %></a>
-      </div>
-    <% }) %>
+  <% if (game.platforms.length) { %>
+    <div class="platforms-container">
+      <% game.platforms.forEach(platform => { %>
+        <div>
+          <a href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
+          <a href="<%= platform.store %>" target="_blank"><%= platform.name %></a>
+          <% if (game.owner.equals(user?.profile._id)) { %>
+            <form action="/games/<%= game._id %>/platforms/<%= platform._id %>?_method=DELETE" method="POST">
+              <button class="platform-remove-btn">X</button>
+            </form>
+          <% } %>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <h2>No platforms have been added yet</h2>
+    <% } %>
   </div>
 
   <% if (game.owner.equals(user?.profile._id)) { %>

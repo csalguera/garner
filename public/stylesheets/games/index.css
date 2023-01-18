@@ -5,16 +5,16 @@ section {
 }
 
 .game-container {
-  width: 500px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8px;
+  margin: 16px;
   cursor: pointer;
 }
 
 .game-container img {
-  width: 500px;
+  width: 400px;
   object-fit: cover;
 }
 

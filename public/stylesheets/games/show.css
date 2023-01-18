@@ -137,3 +137,15 @@ h2, h3 {
 .platforms-container a:hover {
   text-decoration: underline;
 }
+
+.platform-remove-btn {
+  margin: 16px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: red;
+}
+
+.platform-remove-btn:hover {
+  color: red;
+}
