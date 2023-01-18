@@ -5,4 +5,4 @@
 - Users can leave comments on their own collection or on another user's.
 - Users must be authorized to delete or edit content.
 
-<a href="garner-game-collector.fly.dev">Launch App</a>
+<a href="https://garner-game-collector.fly.dev" target="_blank">Launch App</a>
