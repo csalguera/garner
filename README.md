@@ -13,10 +13,10 @@
 - Mongoose
 - Express.js
 - Node.js
+- JavaScript
+- EJS
 - Environment Variables
 - Google OAuth
-- EJS
-- JavaScript
 - CSS
 - Git
 
