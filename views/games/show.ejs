@@ -32,8 +32,7 @@
     <div class="platforms-container">
       <% game.platforms.forEach(platform => { %>
         <div>
-          <a href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
-          <a href="<%= platform.store %>" target="_blank"><%= platform.name %></a>
+          <a href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
           <% if (game.owner.equals(user?.profile._id)) { %>
             <form action="/games/<%= game._id %>/platforms/<%= platform._id %>?_method=DELETE" method="POST">
               <button class="platform-remove-btn">X</button>
