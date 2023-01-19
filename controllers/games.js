@@ -242,5 +242,5 @@ export {
   updateComment,
   deleteComment,
   addPlatform,
-  removePlatform
+  removePlatform,
 }

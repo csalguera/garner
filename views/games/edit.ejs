@@ -11,14 +11,12 @@
   method="POST"
   autocomplete="off"
   >
-    <label>
-      Name:
-      <input required value="<%= game.name %>" type="text" name="name" placeholder="Enter Name">
-    </label>
-    <label>
-      Image:
-      <input value="<%= game.image %>" type="text" name="image" placeholder="Enter Image Url">
-    </label>
+    <label for="name">Name:</label>
+    <input value="<%= game.name %>" id="name" required type="text" name="name" placeholder="Enter Name">
+    <label for="image">Image:</label>
+    <input value="<%= game.image %>" id="image" type="text" name="image" placeholder="Enter Image Url">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="Enter Description" cols="50" rows="5"><%= game.description %></textarea>
     <button type="submit">Update Game</button>
   </form>
   <% } else if (title === 'Edit Comment' && comment.commenter.equals(user?.profile._id)) { %>

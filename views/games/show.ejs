@@ -27,6 +27,10 @@
   <% } else { %>
     <p>Added by <%= game.owner.name %></p>
   <% } %>
+
+  <h1>Description</h1>
+  
+
   <h1>Available On</h1>
   <% if (game.platforms.length) { %>
     <div class="platforms-container">
@@ -70,7 +74,7 @@
       <h3>Sign in to leave a comment.</h3>
     <% } %>
     <% if (game.comments.length) { %>
-      <% game.comments.forEach((comment, idx) => { %>
+      <% game.comments.forEach(comment => { %>
         <div class="comment-container">
           <div class="comment">
             <img src="<%= comment.commenter.avatar %>">

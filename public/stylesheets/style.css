@@ -118,7 +118,8 @@ main a {
 }
 
 input,
-select {
+select,
+textarea {
   background-color: rgba(0, 0, 0, 0);
   font-size: 24px;
   padding: 8px;

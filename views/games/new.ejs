@@ -11,16 +11,14 @@
     method="POST"
     autocomplete="off"
     >
-      <label>
-        Name:
-        <input required type="text" name="name" placeholder="Enter Name">
-      </label>
-      <label>
-        Image:
-        <input type="text" name="image" placeholder="Enter Image Url">
-      </label>
-      <button type="submit">Add Game</button>
-    </form>
+    <label for="name">Name:</label>
+    <input id="name" required type="text" name="name" placeholder="Enter Name">
+    <label for="image">Image:</label>
+    <input id="image" type="text" name="image" placeholder="Enter Image Url">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="Enter Description" cols="50" rows="5"></textarea>
+    <button type="submit">Add Game</button>
+  </form>
   <% } else { %>
     <h2>Please log in to access this page</h2>
   <% } %>
