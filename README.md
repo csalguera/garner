@@ -32,7 +32,8 @@
 - [x] Implement functionality to delete or edit platforms
 - [x] Allow users to add/reference platforms to their own games
 - [x] Allow users to remove referenced platforms from their own games
-- [ ] Allow users to add a desription to their own games
+- [x] Allow users to view the most recent submissions in the home page
+- [x] Allow users to add a desription to their own games
 - [ ] Allow users to add character and soundtrack subdocuments to their own games
 - [ ] Allow users to edit or delete subdocuments from their own games
 - [ ] Allow users to like game collections
