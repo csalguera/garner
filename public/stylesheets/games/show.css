@@ -92,16 +92,16 @@ h2, h3 {
   cursor: pointer;
 }
 
-.content:hover {
-  color: black;
-  background-color: white;
-}
-
 .comment-container {
   width: inherit;
   display: flex;
   flex-direction: column;
   margin: 12px 0;
+}
+
+.comment-container:hover
+.comment-btns-container {
+  visibility: visible;
 }
 
 .comment-btns-container {
