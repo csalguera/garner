@@ -5,7 +5,13 @@
 
 <main>
   <h1><%= title %></h1>
-  <img src="<%= game.image %>" width="700px">
+  <% if (game.image.length) { %>
+    <img class="game-image" src="<%= game.image %>">
+  <% } else { %>
+    <div class="no-image">
+      <p>Owner needs to add image</p>
+    </div>
+  <% } %>
   <% if (game.owner.equals(user?.profile._id)) { %>
     <div class="game-btns-container">
       <form action="/games/<%= game._id %>/edit">

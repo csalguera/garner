@@ -19,6 +19,15 @@ section {
   object-fit: cover;
 }
 
+.no-image {
+  height: 225px;
+  width: 500px;
+  border: solid 1px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-container > a > img:hover {
   filter: brightness(50%);
 }

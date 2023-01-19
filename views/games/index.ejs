@@ -9,7 +9,13 @@
     <% games.forEach(game => { %>
       <div class="game-container">
         <a href="/games/<%= game._id %>">
-          <img src="<%= game.image %>">
+          <% if (game.image.length) { %>
+            <img src="<%= game.image %>">
+          <% } else { %>
+            <div class="no-image">
+              <p>Owner needs to add image</p>
+            </div>
+          <% } %>
         </a>
           <div class="index-platforms-container">
             <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>

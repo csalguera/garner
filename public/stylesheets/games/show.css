@@ -13,6 +13,21 @@ main > a:hover {
   border-radius: 100px;
 }
 
+.game-image {
+  width: 700px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 700px;
+  height: 350px;
+  border: solid 1px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-btns-container {
   display: flex;
   margin-top: 16px;
