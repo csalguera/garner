@@ -29,7 +29,11 @@
   <% } %>
 
   <h1>Description</h1>
-  
+  <% if (game.description.length) { %>
+    <h2 class="description"><%= game.description %></h2>
+  <% } else { %>
+    <h2>There is no description yet.</h2>
+  <% } %>
 
   <h1>Available On</h1>
   <% if (game.platforms.length) { %>

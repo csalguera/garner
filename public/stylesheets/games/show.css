@@ -152,12 +152,9 @@ h2, h3 {
   flex-direction: column;
 }
 
-.platforms-container a {
-  color: white;
-}
-
-.platforms-container a:hover {
-  text-decoration: underline;
+.platforms-container:hover
+.platform-remove-btn {
+  visibility: visible;
 }
 
 .platform-remove-btn {
@@ -166,8 +163,14 @@ h2, h3 {
   height: 40px;
   border-radius: 100px;
   background-color: red;
+  visibility: hidden;
 }
 
 .platform-remove-btn:hover {
   color: red;
+}
+
+.description {
+  max-width: 600px;
+  text-align: center;
 }
