@@ -1,9 +1,11 @@
+![garner Games Index](https://i.imgur.com/PlRsP5J.png)
+
 <h2>garner</h2>
 
-- An app that allows users to create collections from their favorite games.
-- Users can create, update, or delete their collection.
-- Users can leave comments on their own collection or on another user's.
-- Users must be authorized to delete or edit content.
+- An app that allows users to create collections from their favorite games
+- Users can create, update, or delete their collections
+- Users can leave comments on their own collections or on another user's
+- Users must be authorized to delete or edit content
 
 <h1><a href="https://garner-game-collector.fly.dev" target="_blank">Launch App</a></h1>
 
