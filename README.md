@@ -44,3 +44,7 @@
 - [ ] Allow users the ability to change their avatar
 - [ ] Implement edit functionality to comments within same view, as opposed to rendering a new view
 - [ ] Add Hamburger Menu and responsive design
+
+<h2>Attributions</h2>
+
+* View the [attributions](https://github.com/csalguera/garner/blob/main/attributions.md)
