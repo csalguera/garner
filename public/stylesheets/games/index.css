@@ -28,7 +28,8 @@ section {
   align-items: center;
 }
 
-.game-container > a > img:hover {
+.game-container img:hover,
+.no-image:hover {
   filter: brightness(50%);
 }
 
