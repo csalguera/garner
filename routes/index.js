@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
   .sort({ createdAt: 'desc' })
   .limit(10)
   .populate('platforms')
+  .populate('owner')
   .then(games => {
     Platform.find({ _id: {$in: games.platforms} })
     .then(platforms => {

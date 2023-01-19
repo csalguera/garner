@@ -4,6 +4,7 @@ import { Platform } from "../models/platform.js"
 function index(req, res) {
   Game.find({})
   .populate('platforms')
+  .populate('owner')
   .then(games => {
     Platform.find({ _id: {$in: games.platforms} })
     .then(platforms => {
