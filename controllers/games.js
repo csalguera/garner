@@ -3,6 +3,7 @@ import { Platform } from "../models/platform.js"
 
 function index(req, res) {
   Game.find({})
+  .sort({ name: 'asc' })
   .populate('platforms')
   .populate('owner')
   .then(games => {
