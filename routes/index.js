@@ -7,7 +7,7 @@ const router = Router()
 router.get('/', function (req, res) {
   Game.find({})
   .sort({ createdAt: 'desc' })
-  .limit(10)
+  .limit(8)
   .populate('platforms')
   .populate('owner')
   .then(games => {
