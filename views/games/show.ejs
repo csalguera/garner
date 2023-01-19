@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/games/show.css">
+<script defer src="/js/script.js"></script>
 <%- include('../partials/nav') %>
 
 <main>
@@ -64,17 +65,17 @@
       <h3>Sign in to leave a comment.</h3>
     <% } %>
     <% if (game.comments.length) { %>
-      <% game.comments.forEach(comment => { %>
+      <% game.comments.forEach((comment, idx) => { %>
         <div class="comment-container">
           <div class="comment">
             <img src="<%= comment.commenter.avatar %>">
             <div class="commenter-and-content">
               <a href="/games/<%= game._id %>"><%= comment.commenter.name %></a>
-              <p><%= comment.content %></p>
+              <p class="content" id="content<%= idx %>"><%= comment.content %></p>
             </div>
           </div>
           <% if (comment.commenter.equals(user?.profile._id)) { %>
-          <div class="comment-btns-container">
+          <div class="comment-btns-container" id="container<%= idx %>">
             <form action="/games/<%= game._id %>/comments/<%= comment._id %>/edit">
               <button type="submit">Edit</button>
             </form>

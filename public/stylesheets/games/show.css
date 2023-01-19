@@ -83,12 +83,18 @@ h2, h3 {
   text-decoration: underline;
 }
 
-.comment p {
+.content {
   max-width: 415px;
   align-self: flex-end;
   word-wrap:break-word;
   height: fit-content;
   margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.content:hover {
+  color: black;
+  background-color: white;
 }
 
 .comment-container {
@@ -103,6 +109,7 @@ h2, h3 {
   margin: 0 8px;
   width: 415px;
   display: flex;
+  visibility: hidden;
 }
 
 .platforms-container {
