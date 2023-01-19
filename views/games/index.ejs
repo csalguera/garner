@@ -20,7 +20,7 @@
           <div class="index-platforms-container">
             <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>
             <% game.platforms.forEach(platform => { %>
-              <a class="platform-icon" href="/platforms/<%= platform._id %>"><img src="<%= platform.image %>"></a>
+              <a class="platform-icon" href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
             <% }) %>
           </div>
           <p class="added-by">Added by <%= game.owner.name %></p>
