@@ -10,6 +10,7 @@
   <% } else { %>
     <h1><%= title %></h1>
   <% } %>
+  <% if (games.length) { %> 
   <section>
     <% games.forEach(game => { %>
       <div class="game-container">
@@ -31,6 +32,9 @@
       </div>
     <% }) %>
   </section>
+  <% } else { %>
+    <h2>This user doesn't have a collection yet.</h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>
