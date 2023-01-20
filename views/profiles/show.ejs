@@ -1,0 +1,32 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/games/index.css">
+<link rel="stylesheet" href="/stylesheets/profiles/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <img class="avatar" src="<%= profile.avatar %>">
+  <h1><%= title %></h1>
+  <section>
+    <% games.forEach(game => { %>
+      <div class="game-container">
+        <a href="/games/<%= game._id %>">
+          <% if (game.image.length) { %>
+            <img src="<%= game.image %>">
+          <% } else { %>
+            <div class="no-image">
+              <p>Owner needs to add image</p>
+            </div>
+          <% } %>
+        </a>
+          <div class="index-platforms-container">
+            <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>
+            <% game.platforms.forEach(platform => { %>
+              <a class="platform-icon" href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
+            <% }) %>
+          </div>
+      </div>
+    <% }) %>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
