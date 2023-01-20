@@ -34,11 +34,11 @@
 - [x] Allow users to remove referenced platforms from their own games
 - [x] Allow users to view the most recent submissions in the home page
 - [x] Allow users to add a desription to their own games
+- [x] Implement a profile view, where users can track their collections
 - [ ] Allow users to add character and soundtrack subdocuments to their own games
 - [ ] Allow users to edit or delete subdocuments from their own games
 - [ ] Allow users to like game collections
 - [ ] Allow users to like comments
-- [ ] Implement a profile view, where users can track their collections and comments
 - [ ] Implement a view to dislpay a user's liked games
 - [ ] Allow users the ability to change their name
 - [ ] Allow users the ability to change their avatar
