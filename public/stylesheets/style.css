@@ -2,6 +2,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 /* The Universal Selector */
@@ -15,6 +16,7 @@ html {
 }
 
 body {
+  height: inherit;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -134,4 +136,22 @@ label {
 
 .active {
   color: white;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer * {
+  padding: 8px;
+  font-size: 20px;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
