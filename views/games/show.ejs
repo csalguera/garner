@@ -69,7 +69,7 @@
       <div class="comment-form">
         <img src="<%= user.profile.avatar %>">
         <form action="/games/<%= game._id %>/comments" method="POST" autocomplete="off">
-          <input type="text" placeholder="Add a comment" name="content">
+          <input required type="text" placeholder="Add a comment" name="content">
           <button type="submit">Comment</button>
         </form>
       </div>
