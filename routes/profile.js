@@ -7,7 +7,7 @@ const router = Router()
 
 router.get('/', isLoggedIn, function (req, res) {
   Game.find({ owner: req.user.profile._id })
-  .sort({ name: 'asc' })
+  .sort({ createdAt: 'desc' })
   .populate('platforms')
   .then(games => {
     Platform.find({ _id: {$in: games.platforms} })

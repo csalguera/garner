@@ -4,38 +4,42 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome, <%= user ? user.profile.name : '' %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        class="avatar"
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
-  <h2>Here's your current collection</h2>
-  <% if (games.length) { %>
-    <% games.forEach(game => { %>
-      <div class="game-container">
-        <a href="/games/<%= game._id %>">
-          <% if (game.image.length) { %>
-            <img src="<%= game.image %>">
-          <% } else { %>
-            <div class="no-image">
-              <p>Owner needs to add image</p>
-            </div>
-          <% } %>
-        </a>
-          <div class="index-platforms-container">
-            <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>
-            <% game.platforms.forEach(platform => { %>
-              <a class="platform-icon" href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
-            <% }) %>
-          </div>
+  <h1>Welcome, <%= user ? user.profile.name : 'please sign in to access this page' %></h1>
+    <% if (user?.profile.avatar) { %>
+      <div>
+        <img
+          class="avatar"
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
       </div>
-    <% }) %>
+    <% if (games.length) { %>
+      <h2>Here's your current collection</h2>
+      <section>
+        <% games.forEach(game => { %>
+          <div class="game-container">
+            <a href="/games/<%= game._id %>">
+              <% if (game.image.length) { %>
+                <img src="<%= game.image %>">
+              <% } else { %>
+                <div class="no-image">
+                  <p>Owner needs to add image</p>
+                </div>
+              <% } %>
+            </a>
+              <div class="index-platforms-container">
+                <a class="platform-name" href="/games/<%= game._id %>"><%= game.name %></a>
+                <% game.platforms.forEach(platform => { %>
+                  <a class="platform-icon" href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
+                <% }) %>
+              </div>
+          </div>
+        <% }) %>
+      </section>
+    <% } else { %>
+      <h2>Add some games to your collection!</h2>
     <% } %>
+  <% } %>
 </main>
 
 <%- include('./partials/footer') %>

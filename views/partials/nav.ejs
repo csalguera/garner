@@ -9,9 +9,7 @@
     <a href="/games/new" class="a-tag <%- title === 'Add Game' ? 'active' : '' %>">Add Game</a>
     <a href="/platforms" class="a-tag <%- title === 'All Platforms' ? 'active' : '' %>">All Platforms</a>
     <a href="/platforms/new" class="a-tag <%- title === 'Add Platform' ? 'active' : '' %>">Add Platform</a>
-    <% if (user) { %>
-      <a href="/profile" class="a-tag <%- title === 'My Profile' ? 'active' : '' %>">My Profile</a>
-    <% } %>
+    <a href="/profile" class="a-tag <%- title === 'My Profile' ? 'active' : '' %>">My Profile</a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit" id="logout">Logout</button>
