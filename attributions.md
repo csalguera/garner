@@ -7,3 +7,5 @@
 * [Background SVG](https://heropatterns.com/) from Hero Patterns
 
 * [Base Platform Logos](https://www.logo.wine/) from Logo Wine
+
+* Everyone that took the time to sign in and create a resource
