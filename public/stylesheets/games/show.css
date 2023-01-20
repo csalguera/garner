@@ -174,3 +174,12 @@ h2, h3 {
   max-width: 600px;
   text-align: center;
 }
+
+.profile-anchor {
+  color: white;
+  font-size: 24px;
+}
+
+.profile-anchor:hover {
+  text-decoration: underline;
+}

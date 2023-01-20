@@ -23,7 +23,7 @@
               <a class="platform-icon" href="<%= platform.store %>" target="_blank"><img src="<%= platform.image %>"></a>
             <% }) %>
           </div>
-          <p class="added-by">Added by <%= game.owner.name %></p>
+          <p class="added-by">Added by <a class="profile-anchor" href="/profiles/<%= game.owner._id %>"><%= game.owner.name %></a></p>
       </div>
     <% }) %>
     <% } else { %>

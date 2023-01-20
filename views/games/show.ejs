@@ -24,7 +24,7 @@
   <% if (game.owner.equals(user?.profile._id)) { %>
     <p>Added by you</p>
   <% } else { %>
-    <p>Added by <%= game.owner.name %></p>
+    <p>Added by <a class="profile-anchor" href="/profiles/<%= game.owner._id %>"><%= game.owner.name %></a></p>
   <% } %>
 
   <h1>Description</h1>

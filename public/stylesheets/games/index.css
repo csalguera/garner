@@ -47,8 +47,13 @@ a {
   margin-bottom: 4px;
 }
 
-.index-platforms-container .platform-name {
+.platform-name {
   margin-right: auto;
+}
+
+.platform-name:hover,
+.profile-anchor:hover {
+  text-decoration: underline;
 }
 
 .index-platforms-container img {
@@ -63,7 +68,8 @@ a {
   border-radius: 8px;
 }
 
-.added-by {
+.added-by,
+.profile-anchor {
   margin-top: 0;
   font-size: 16px;
 }
