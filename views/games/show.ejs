@@ -82,7 +82,7 @@
           <div class="comment">
             <img src="<%= comment.commenter.avatar %>">
             <div class="commenter-and-content">
-              <a href="/games/<%= game._id %>"><%= comment.commenter.name %></a>
+              <a href="/profiles/<%= comment.commenter._id %>"><%= comment.commenter.name %></a>
               <p class="content"><%= comment.content %></p>
             </div>
           </div>
