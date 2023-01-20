@@ -33,7 +33,7 @@ nav {
   align-items: center;
   padding: 10px;
   height: 70px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: white;
 }
 
 nav > * {
@@ -54,6 +54,8 @@ nav > * {
 
 .active-logo {
   filter: invert();
+  background-color: white;
+  border-radius: 10px;
 }
 
 .active-logo:hover {
@@ -79,6 +81,12 @@ nav > * {
 
 a {
   text-decoration: none;
+}
+
+.active {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
 }
 
 main {
@@ -134,10 +142,6 @@ textarea {
 p,
 label {
   font-size: 24px;
-}
-
-.active {
-  color: white;
 }
 
 footer {
