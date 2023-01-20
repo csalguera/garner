@@ -16,7 +16,9 @@ html {
 }
 
 body {
-  height: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -31,7 +33,11 @@ nav {
   align-items: center;
   padding: 10px;
   min-height: 60px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav > * {
+  margin: 0 auto;
 }
 
 .logo {
@@ -69,10 +75,6 @@ nav {
   background-color: black;
   color: white;
   border-radius: 10px;
-}
-
-nav > * {
-  margin: 0 auto;
 }
 
 a {
@@ -141,15 +143,15 @@ label {
 footer {
   bottom: 0;
   width: 100%;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer * {
+footer a {
   padding: 8px;
   font-size: 20px;
+  color: white;
 }
 
 footer a:hover {
