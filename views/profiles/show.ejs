@@ -5,7 +5,11 @@
 
 <main>
   <img class="avatar" src="<%= profile.avatar %>">
-  <h1><%= title %></h1>
+  <% if (profile._id.equals(user?.profile._id)) { %>
+    <h1>Your Collection</h1>
+  <% } else { %>
+    <h1><%= title %></h1>
+  <% } %>
   <section>
     <% games.forEach(game => { %>
       <div class="game-container">
