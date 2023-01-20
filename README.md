@@ -36,10 +36,10 @@
 - [x] Allow users to add a description to their own games
 - [x] Implement a profile view, where users can track their collections
 - [ ] Allow users to add character and soundtrack subdocuments to their own games
-- [ ] Allow users to edit or delete subdocuments from their own games
+- [ ] Allow users to edit or delete the subdocuments from their own games
 - [ ] Allow users to like game collections
 - [ ] Allow users to like comments
-- [ ] Implement a view to dislpay a user's liked games
+- [ ] Implement a view to display a user's liked games
 - [ ] Allow users the ability to change their name
 - [ ] Allow users the ability to change their avatar
 - [ ] Implement edit functionality to comments within same view, as opposed to rendering a new view
